@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Management;
 using CommandLine.Utility;
+using WinPart.Properties;
 #pragma warning disable IDE1006
 namespace WinPart {
     class Program {
@@ -133,7 +134,12 @@ namespace WinPart {
 
         public void getInfo()
         {
-            throw new NotImplementedException();
+            foreach (string s in Resources.Partition.Split("\r\n".ToCharArray()))
+            {
+                var tmp1 = s.Split(" ".ToCharArray());
+                var tmp2 = mo.Properties[tmp1[tmp1.Length]];
+                Console.WriteLine(tmp2.Name + tmp2.Value);
+            }
         }
     }
 

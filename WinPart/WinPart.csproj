@@ -110,5 +110,10 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\Device.txt" />
+    <Content Include="Data\Logical.txt" />
+    <Content Include="Data\Partition.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -59,5 +59,49 @@ namespace WinPart.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string Device {
+            get {
+                return ResourceManager.GetString("Device", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string Logical {
+            get {
+                return ResourceManager.GetString("Logical", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to   unit16   AdditionalAvailability;
+        ///  uint16   Availability;
+        ///  uint16   PowerManagementCapabilities[];
+        ///  string   IdentifyingDescriptions[1];
+        ///  uint64   MaxQuiesceTime;
+        ///  uint64   OtherIdentifyingInfo;
+        ///  uint16   StatusInfo;
+        ///  uint64   PowerOnHours;
+        ///  uint64   TotalPowerOnHours;
+        ///  uint16   Access;
+        ///  uint64   BlockSize;
+        ///  boolean  Bootable;
+        ///  boolean  BootPartition;
+        ///  string.  Caption;
+        ///  uint32   ConfigManagerErrorCode;
+        ///  boolean  ConfigManagerUserConfig;
+        ///  string.  CreationClassName;
+        ///  strin [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Partition {
+            get {
+                return ResourceManager.GetString("Partition", resourceCulture);
+            }
+        }
     }
 }
