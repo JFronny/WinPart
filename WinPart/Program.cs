@@ -146,7 +146,7 @@ namespace WinPart {
             logicalDrives = new List<LogicalDrive>() { };
             foreach (ManagementObject m in new ManagementObjectSearcher(string.Format("associators of {{{0}}} where AssocClass = Win32_LogicalDiskToPartition", MO.Path.RelativePath)).Get())
                 logicalDrives.Add(new LogicalDrive().getFromMO(m, program));
-            name = MO.ToString();
+            name = (string)MO.Properties["Type"].Value;
             return this;
         }
 
