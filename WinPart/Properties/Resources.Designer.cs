@@ -19,7 +19,7 @@ namespace WinPart.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -61,7 +61,27 @@ namespace WinPart.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to uint16   Availability
+        ///uint32   BytesPerSector
+        ///uint16   Capabilities[]
+        ///string   CapabilityDescriptions[]
+        ///string   Caption
+        ///string   CompressionMethod
+        ///uint32   ConfigManagerErrorCode
+        ///boolean  ConfigManagerUserConfig
+        ///string   CreationClassName
+        ///uint64   DefaultBlockSize
+        ///string   Description
+        ///string   DeviceID
+        ///boolean  ErrorCleared
+        ///string   ErrorDescription
+        ///string   ErrorMethodology
+        ///string   FirmwareRevision
+        ///uint32   Index
+        ///datetime InstallDate
+        ///string   InterfaceType
+        ///uint32   LastErrorCode
+        ///strin [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Device {
             get {
@@ -70,33 +90,57 @@ namespace WinPart.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to uint16   Access
+        ///uint16   Availability
+        ///uint64   BlockSize
+        ///string   Caption
+        ///boolean  Compressed
+        ///uint32   ConfigManagerErrorCode
+        ///boolean  ConfigManagerUserConfig
+        ///string   CreationClassName
+        ///string   Description
+        ///string   DeviceID
+        ///uint32   DriveType
+        ///boolean  ErrorCleared
+        ///string   ErrorDescription
+        ///string   ErrorMethodology
+        ///string   FileSystem
+        ///uint64   FreeSpace
+        ///datetime InstallDate
+        ///uint32   LastErrorCode
+        ///uint32   MaximumComponentLength
+        ///uint32   MediaType
+        ///string   Name
+        ///uint64   NumberOfBlocks
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string Logical {
+        internal static string LogicalDrive {
             get {
-                return ResourceManager.GetString("Logical", resourceCulture);
+                return ResourceManager.GetString("LogicalDrive", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to   unit16   AdditionalAvailability;
-        ///  uint16   Availability;
-        ///  uint16   PowerManagementCapabilities[];
-        ///  string   IdentifyingDescriptions[1];
-        ///  uint64   MaxQuiesceTime;
-        ///  uint64   OtherIdentifyingInfo;
-        ///  uint16   StatusInfo;
-        ///  uint64   PowerOnHours;
-        ///  uint64   TotalPowerOnHours;
-        ///  uint16   Access;
-        ///  uint64   BlockSize;
-        ///  boolean  Bootable;
-        ///  boolean  BootPartition;
-        ///  string.  Caption;
-        ///  uint32   ConfigManagerErrorCode;
-        ///  boolean  ConfigManagerUserConfig;
-        ///  string.  CreationClassName;
-        ///  strin [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to unit16   AdditionalAvailability
+        ///uint16   Availability
+        ///uint16   PowerManagementCapabilities[]
+        ///string   IdentifyingDescriptions[1]
+        ///uint64   MaxQuiesceTime
+        ///uint64   OtherIdentifyingInfo
+        ///uint16   StatusInfo
+        ///uint64   PowerOnHours
+        ///uint64   TotalPowerOnHours
+        ///uint16   Access
+        ///uint64   BlockSize
+        ///boolean  Bootable
+        ///boolean  BootPartition
+        ///string.  Caption
+        ///uint32   ConfigManagerErrorCode
+        ///boolean  ConfigManagerUserConfig
+        ///string.  CreationClassName
+        ///string   Description
+        ///string   DeviceID
+        ///uint32   DiskInde [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Partition {
             get {
