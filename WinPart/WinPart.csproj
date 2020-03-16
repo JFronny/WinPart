@@ -8,7 +8,11 @@
     <Deterministic>false</Deterministic>
   </PropertyGroup>
   <PropertyGroup>
-    <PostBuildEvent>if exist "$(SolutionDir)Data\pkgtool.exe" ($(SolutionDir)Data\pkgtool.exe build --noLogo --binDir .) else if exist "%appdata%\UpTool2\Apps\0e35d154-d0d3-45e0-b080-62f521263a44\app\pkgtool.exe" ("%appdata%\UpTool2\Apps\0e35d154-d0d3-45e0-b080-62f521263a44\app\pkgtool.exe" build --noLogo --binDir .) else echo Cound not find Package build tools, skipping</PostBuildEvent>
+    <PostBuildEvent>
+      echo @echo off > WinPart.bat
+      echo start %%~dp0WinPart.exe -debug >> WinPart.bat
+      if exist "$(SolutionDir)Data\pkgtool.exe" ($(SolutionDir)Data\pkgtool.exe build --noLogo --binDir . --mainBin WinPart.bat) else if exist "%appdata%\UpTool2\Apps\0e35d154-d0d3-45e0-b080-62f521263a44\app\pkgtool.exe" ("%appdata%\UpTool2\Apps\0e35d154-d0d3-45e0-b080-62f521263a44\app\pkgtool.exe" build --noLogo --binDir . --mainBin WinPart.bat) else echo Cound not find Package build tools, skipping
+    </PostBuildEvent>
   </PropertyGroup>
   <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
