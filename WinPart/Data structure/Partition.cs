@@ -2,28 +2,30 @@
 using System.Collections.Generic;
 using System.Management;
 using WinPart.Properties;
-#pragma warning disable IDE1006
-namespace WinPart
+
+namespace WinPart.Data_structure
 {
-    class Partition
+    internal class Partition
     {
-        public List<LogicalDrive> logicalDrives;
-        public string name;
-        public ManagementObject mo;
-        public Partition getFromMO(ManagementObject MO)
+        private ManagementBaseObject _mo;
+        public List<LogicalDrive> LogicalDrives;
+        public string Name;
+
+        public Partition GetFromMo(ManagementObject mo)
         {
-            mo = MO;
-            logicalDrives = new List<LogicalDrive>() { };
-            foreach (ManagementObject m in new ManagementObjectSearcher(string.Format("associators of {{{0}}} where AssocClass = Win32_LogicalDiskToPartition", MO.Path.RelativePath)).Get())
-                logicalDrives.Add(new LogicalDrive().getFromMO(m));
-            name = (string)MO.Properties["Type"].Value;
+            _mo = mo;
+            LogicalDrives = new List<LogicalDrive>();
+            foreach (ManagementBaseObject m in new ManagementObjectSearcher(
+                $"associators of {{{mo.Path.RelativePath}}} where AssocClass = Win32_LogicalDiskToPartition").Get())
+                LogicalDrives.Add(new LogicalDrive().GetFromMo(m));
+            Name = (string) mo.Properties["Type"].Value;
             return this;
         }
 
-        public void getInfo()
+        public void GetInfo()
         {
-            foreach (string s in Resources.Partition.Split(new[] { "\r\n" }, StringSplitOptions.None))
-                Program.printInfo(mo, s);
+            foreach (string s in Resources.Partition.Split(new[] {"\r\n"}, StringSplitOptions.None))
+                Program.PrintInfo(_mo, s);
         }
     }
 }

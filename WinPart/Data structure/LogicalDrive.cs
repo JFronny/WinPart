@@ -1,24 +1,25 @@
 ﻿using System;
 using System.Management;
 using WinPart.Properties;
-#pragma warning disable IDE1006
-namespace WinPart
+
+namespace WinPart.Data_structure
 {
-    class LogicalDrive
+    internal class LogicalDrive
     {
-        public string name;
-        public ManagementObject mo;
-        public LogicalDrive getFromMO(ManagementObject MO)
+        private ManagementBaseObject _mo;
+        public string Name;
+
+        public LogicalDrive GetFromMo(ManagementBaseObject mo)
         {
-            name = (string)MO.Properties["Name"].Value;
-            mo = MO;
+            Name = (string) mo.Properties["Name"].Value;
+            _mo = mo;
             return this;
         }
 
-        public void getInfo()
+        public void GetInfo()
         {
-            foreach (string s in Resources.LogicalDrive.Split(new[] { "\r\n" }, StringSplitOptions.None))
-                Program.printInfo(mo, s);
+            foreach (string s in Resources.LogicalDrive.Split(new[] {"\r\n"}, StringSplitOptions.None))
+                Program.PrintInfo(_mo, s);
         }
     }
 }
