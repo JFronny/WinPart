@@ -56,7 +56,7 @@ jobs:
         $app.appendChild($xml.CreateElement("ID")).InnerText = "a48b0879-42ec-40e1-885a-480e948242d7"
         $app.appendChild($xml.CreateElement("File")).InnerText = "${{ steps.upload_release_asset.outputs.browser_download_url }}"
         $app.appendChild($xml.CreateElement("Hash")).InnerText = $(Get-FileHash .\package.zip).Hash
-        $app.appendChild($xml.CreateElement("MainFile")).InnerText = $file.Name
+        $app.appendChild($xml.CreateElement("MainFile")).InnerText = "WinPart.bat"
         echo NULL > app.xml
         $xml.save($(gi .\app.xml).Fullname)
     - name: Upload XML
